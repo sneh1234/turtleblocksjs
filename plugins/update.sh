@@ -1,0 +1,14 @@
+python ../pluginify.py accelerometer.rtp > accelerometer.json
+python ../pluginify.py bitcoin.rtp > bitcoin.json
+python ../pluginify.py dictionary.rtp > dictionary.json
+python ../pluginify.py facebook.rtp > facebook.json
+python ../pluginify.py finance.rtp > finance.json
+python ../pluginify.py heap.rtp > heap.json
+python ../pluginify.py logic.rtp > logic.json
+python ../pluginify.py maths.rtp > maths.json
+python ../pluginify.py nutrition.rtp > nutrition.json
+python ../pluginify.py rodi.rtp > rodi.json
+python ../pluginify.py screenshot.rtp > screenshot.json
+python ../pluginify.py translate.rtp > translate.json
+python ../pluginify.py turtle.rtp > turtle.json
+python ../pluginify.py weather.rtp > weather.json
