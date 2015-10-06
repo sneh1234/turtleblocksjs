@@ -226,16 +226,27 @@ function initBasicProtoBlocks(palettes, blocks) {
     pendownBlock.adjustWidthToLabel();
     pendownBlock.zeroArgBlock();
 
+    var fillBlock = new ProtoBlock('fill');
+    fillBlock.palette = palettes.dict['pen'];
+    blocks.protoBlockDict['fill'] = fillBlock;
+    fillBlock.staticLabels.push(_('fill'));
+    fillBlock.adjustWidthToLabel();
+    fillBlock.flowClampZeroArgBlock();
+
+    // Deprecated
     var startfillBlock = new ProtoBlock('beginfill');
     startfillBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['beginfill'] = startfillBlock;
+    startfillBlock.hidden = 'true';
     startfillBlock.staticLabels.push(_('begin fill'));
     startfillBlock.adjustWidthToLabel();
     startfillBlock.zeroArgBlock();
 
+    // Deprecated
     var endfillBlock = new ProtoBlock('endfill');
     endfillBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['endfill'] = endfillBlock;
+    endfillBlock.hidden = 'true';
     endfillBlock.staticLabels.push(_('end fill'));
     endfillBlock.adjustWidthToLabel();
     endfillBlock.zeroArgBlock();
@@ -264,16 +275,27 @@ function initBasicProtoBlocks(palettes, blocks) {
     fillscreenBlock.adjustWidthToLabel();
     fillscreenBlock.threeArgBlock();
 
+    var hollowBlock = new ProtoBlock('hollowline');
+    hollowBlock.palette = palettes.dict['pen'];
+    blocks.protoBlockDict['hollowline'] = hollowBlock;
+    hollowBlock.staticLabels.push(_('hollow line'));
+    hollowBlock.adjustWidthToLabel();
+    hollowBlock.flowClampZeroArgBlock();
+
+    // Deprecated
     var beginHollowLineBlock = new ProtoBlock('beginhollowline');
     beginHollowLineBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['beginhollowline'] = beginHollowLineBlock;
+    beginHollowLineBlock.hidden = 'true';
     beginHollowLineBlock.staticLabels.push(_('begin hollow line'));
     beginHollowLineBlock.adjustWidthToLabel();
     beginHollowLineBlock.zeroArgBlock();
 
+    // Deprecated
     var endHollowLineBlock = new ProtoBlock('endhollowline');
     endHollowLineBlock.palette = palettes.dict['pen'];
     blocks.protoBlockDict['endhollowline'] = endHollowLineBlock;
+    endHollowLineBlock.hidden = 'true';
     endHollowLineBlock.staticLabels.push(_('end hollow line'));
     endHollowLineBlock.adjustWidthToLabel();
     endHollowLineBlock.zeroArgBlock();
@@ -920,6 +942,19 @@ function initBasicProtoBlocks(palettes, blocks) {
     turtleNameBlock.adjustWidthToLabel();
     turtleNameBlock.parameterBlock();
     turtleNameBlock.dockTypes[0] = 'textout';
+
+    var setTurtleName = new ProtoBlock('setturtlename');
+    setTurtleName.palette = palettes.dict['extras'];
+    blocks.protoBlockDict['setturtlename'] = setTurtleName;
+    setTurtleName.staticLabels.push(_('turtle name'));
+    setTurtleName.staticLabels.push(_('source'));
+    setTurtleName.staticLabels.push(_('target'));
+    setTurtleName.adjustWidthToLabel();
+    setTurtleName.twoArgBlock();
+    setTurtleName.dockTypes[1] = 'anyin';
+    setTurtleName.dockTypes[2] = 'anyin';
+    setTurtleName.defaults.push('0');
+    setTurtleName.defaults.push('Yertle');
 
     // Sensors palette
     var timeBlock = new ProtoBlock('time');
